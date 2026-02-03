@@ -1,42 +1,363 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  
+}
+
+/* ================= LAYOUT ================= */
+.homepage {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: #ffffff;
+  box-shadow: 0 20px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* ================= BRAND LOGO ================= */
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.logo-icon {
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.logo-text {
+  color: #1f2937;
+}
+
+.logo-accent {
+  color: #4f46e5;
+}
+
+.homepage.dark .logo-text {
+  color: #e5e7eb;
+}
+
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #0d0d0e;
+  font-weight: 500;
+}
+
+/* ================= BUTTONS ================= */
+.btn-primary {
+  background: #292753;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #ffffff;
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: 2px solid #ffffff;
+  cursor: pointer;
+}
+
+/* ================= HERO ================= */
+.hero {
+  width: 100vw;
+  min-height: 80vh;
+  background: linear-gradient(135deg, #2d2c38, #9d92afad);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.hero-content {
+  max-width: 900px;
+  padding: 0 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hero h1 {
+  font-size: 52px;
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.hero p {
+  font-size: 18px;
+  margin-bottom: 30px;
 }
 
-.card {
-  padding: 2em;
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
 
-.read-the-docs {
-  color: #888;
+/* ================= STATS ================= */
+.stats {
+  width: 100%;
+  padding: 70px 60px;
+  background-color: #ffffff;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  text-align: center;
+  color: #4f46e5;
 }
+
+.stat-card {
+  background: #f9fafb;
+  padding: 35px 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.stat-card h3 {
+  font-size: 36px;
+  color: #4f46e5;
+}
+
+.stat-card p {
+  color: #374151;
+}
+/* ================= FEATURES ================= */
+.features {
+  padding: 80px 60px;
+  text-align: center;
+  background: #f5f7fb;
+  color: #4f46e5;
+}
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+  color: #374151;
+}
+.feature-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+/* ================= CATEGORIES ================= */
+.categories {
+  padding: 80px 60px;
+  text-align: center;
+}
+.categories h2 {
+  color: #160fe9;
+}
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+.category-card {
+  background: lightslategrey;
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+}
+/* ================= HOW IT WORKS ================= */
+/* HOW IT WORKS */
+.how-it-works {
+    padding: 60px;
+    text-align: center;
+    color: #4f46e5;
+}
+.steps {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+.step span {
+    font-size: 20px;
+    color: #09090a;
+    border-radius: 50%;
+    padding: 5px;
+    background: #747475;
+}
+/* ================= CTA ================= */
+.cta {
+  background: #4f46e5;
+  color: white;
+  text-align: center;
+  padding: 70px 20px;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  background: #111827;
+  color: #9ca3af;
+  text-align: center;
+  padding: 20px;
+}
+/* ================= LOGIN PAGE ================= */
+
+.login-page {
+  min-height: 100vh;
+  background: #f5f7fb;
+}
+
+.login-container {
+  max-width: 420px;
+  margin: 70px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 50px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.login-container h2 {
+  margin-bottom: 10px;
+  color: #292753;
+}
+
+.login-container p {
+  color: #6b7280;
+  margin-bottom: 30px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-form input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+.login-footer {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.login-footer span {
+  color: #4f46e5;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* ================= LOGIN PAGE LINKS ================= */
+.login-footer {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.register-link {
+  color: #4f46e5;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
+
+.no-link-style {
+  text-decoration: none;
+  color: inherit;
+}
+/* ================= ABOUT PAGE ================= */
+
+/* About Hero overrides (reuse hero but adjust spacing) */
+.hero.about-hero {
+  min-height: 60vh;
+}
+
+.hero.about-hero h1 {
+  font-size: 48px;
+}
+
+/* About text section */
+.about-text {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #374151;
+}
+
+/* Mission / Vision / Values cards */
+.about-cards {
+  width: 100%;
+  padding: 80px 60px;
+  background-color: #ffffff;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  text-align: center;
+}
+
+.about-card {
+  background: #f9fafb;
+  padding: 35px 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.about-card h3 {
+  color: #4f46e5;
+  margin-bottom: 12px;
+}
+
+/* Why Skillora cards spacing */
+.features.about-features {
+  background: #f5f7fb;
+}
+
+/* CTA tweak for About */
+.cta.about-cta {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+}
+
+.no-link-style {
+  text-decoration: none;
+  color: inherit;
+}
+
+
