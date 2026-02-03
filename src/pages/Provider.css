@@ -1,0 +1,186 @@
+.freelance-dashboard {
+  background-image: linear-gradient(rgba(10, 25, 41, 0.97), rgba(10, 25, 41, 0.97)), 
+                    url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 60px 20px;
+  color: #f1f5f9;
+}
+
+.fd-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.fd-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 50px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 30px;
+}
+
+.fd-badge {
+  color: #1dbf73;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.fd-header h1 { font-size: 2.5rem; margin: 0; }
+
+.fd-stats-bar {
+  display: flex;
+  gap: 30px;
+}
+
+.fd-stat-item { text-align: right; }
+.fd-stat-item span { color: #94a3b8; font-size: 0.9rem; display: block; }
+.fd-stat-item strong { font-size: 1.5rem; color: #1dbf73; }
+
+/* Grid */
+.fd-grid {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  gap: 30px;
+}
+
+.fd-section-title {
+  text-align: left;
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+  color: #cbd5e1;
+}
+
+/* Card Style */
+.fd-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.fd-card:hover {
+  border-color: #1dbf73;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.fd-card-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.client-avatar {
+  width: 50px;
+  height: 50px;
+  background: #334155;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: #1dbf73;
+}
+
+.fd-card-left h3 { margin: 0; font-size: 1.1rem; text-align: left; }
+.fd-card-left p { margin: 5px 0 0 0; color: #94a3b8; font-size: 0.9rem; }
+
+.fd-card-right { text-align: right; }
+
+.fd-status {
+  font-size: 0.7rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.fd-status.confirmed { background: rgba(29, 191, 115, 0.15); color: #1dbf73; }
+.fd-status.pending { background: rgba(251, 191, 36, 0.15); color: #fbbf24; }
+
+.fd-amount { font-weight: 800; color: #ffffff; font-size: 1.1rem; margin: 10px 0; }
+.fd-date { color: #94a3b8; font-size: 0.85rem; margin: 5px 0; }
+
+.fd-actions { display: flex; gap: 10px; margin-top: 15px; }
+
+.fd-btn-msg, .fd-btn-manage {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.fd-btn-msg { background: transparent; border: 1px solid rgba(255,255,255,0.2); color: white; }
+.fd-btn-manage { background: #1dbf73; border: none; color: white; }
+
+/* Sidebar */
+.fd-side-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 25px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.fd-toggle-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.fd-toggle {
+  width: 40px;
+  height: 20px;
+  background: #1dbf73;
+  border-radius: 20px;
+  position: relative;
+}
+
+.fd-toggle::after {
+  content: '';
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+}
+
+.fd-profile-link, .fd-all-reviews {
+  display: block;
+  color: #1dbf73;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.fd-mini-review {
+  border-left: 2px solid #1dbf73;
+  padding-left: 15px;
+  margin: 15px 0;
+}
+
+.fd-mini-review p { font-style: italic; font-size: 0.9rem; color: #cbd5e1; margin-bottom: 5px; }
+
+@media (max-width: 900px) {
+  .fd-grid { grid-template-columns: 1fr; }
+  .fd-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+}

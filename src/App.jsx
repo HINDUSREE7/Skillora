@@ -10,6 +10,7 @@ import UserDashboard from './pages/UserDashboard';
 import ProviderDashboard from './pages/ProviderDashboard';
 import "./App.css";
 import ScrollToTop from './components/ScrollToTop';
+import Provider from './pages/Provider';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/register" element={<UserRegistrationPage />} />
           <Route path="/dashboard" element={<UserDashboard />} />
           <Route path="/provider"  element={<ProviderDashboard />} />
+          <Route path="/dash" element={<Provider/>} />
 
           <Route path="/services" element={<Services />} />
           <Route path="/profile/:id" element={<ServiceDetails />} />
