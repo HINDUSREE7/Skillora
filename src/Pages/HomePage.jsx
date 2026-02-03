@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
+import heroVideo from "../assets/herovideo.mp4";
 
 function HomePage() {
   const [darkMode, setDarkMode] = useState(false);
@@ -10,7 +11,6 @@ function HomePage() {
 
       {/* ================= NAVBAR ================= */}
       <header className="navbar">
-        {/* 🔹 NEW LOGO DESIGN */}
         <div className="logo brand-logo">
           <span className="logo-icon">S</span>
           <span className="logo-text">
@@ -27,7 +27,6 @@ function HomePage() {
           {/* ===== LIGHT / DARK TOGGLE ===== */}
           <div className="theme-toggle">
             <span className={!darkMode ? "active" : ""}>Light</span>
-
             <label className="toggle-switch">
               <input
                 type="checkbox"
@@ -35,7 +34,6 @@ function HomePage() {
                 onChange={() => setDarkMode(!darkMode)}
               />
             </label>
-
             <span className={darkMode ? "active" : ""}>Dark</span>
           </div>
 
@@ -45,44 +43,47 @@ function HomePage() {
         </nav>
       </header>
 
-      {/* ================= HERO ================= */}
-      <section className="hero">
-        <div className="hero-content">
-          <h1>Hire Experts. Get Results.</h1>
-          <p>
-            Skillora connects businesses with verified freelancers across
-            development, design, marketing, and more.
-          </p>
+      {/* ================= HERO WITH VIDEO ================= */}
+     {/* ================= HERO WITH VIDEO ================= */}
+<section className="hero video-hero">
+  <video
+    className="hero-video"
+    src={heroVideo}
+    autoPlay
+    loop
+    muted
+    playsInline
+  />
 
-          <div className="hero-actions">
-            <Link to="/login" className="no-link-style">
-              <button className="btn-primary">LOGIN</button>
-            </Link>
-            <Link to="/register" className="no-link-style">
-              <button className="btn-outline">REGISTER</button>
-            </Link>
-          </div>
-        </div>
-      </section>
+  {/* Dark overlay */}
+  <div className="hero-overlay"></div>
+
+  {/* TEXT ON VIDEO */}
+  <div className="hero-content hero-center">
+    <h1>Hire Experts. Get Results.</h1>
+    <p>
+      Skillora connects businesses with verified freelancers across
+      development, design, marketing, and more.
+    </p>
+
+    <div className="hero-actions">
+      <Link to="/login" className="no-link-style">
+        <button className="btn-primary">LOGIN</button>
+      </Link>
+      <Link to="/register" className="no-link-style">
+        <button className="btn-outline">REGISTER</button>
+      </Link>
+    </div>
+  </div>
+</section>
+
 
       {/* ================= STATS ================= */}
       <section className="stats">
-        <div className="stat-card">
-          <h3>50K+</h3>
-          <p>Freelancers</p>
-        </div>
-        <div className="stat-card">
-          <h3>20K+</h3>
-          <p>Projects Completed</p>
-        </div>
-        <div className="stat-card">
-          <h3>98%</h3>
-          <p>Client Satisfaction</p>
-        </div>
-        <div className="stat-card">
-          <h3>100+</h3>
-          <p>Countries</p>
-        </div>
+        <div className="stat-card"><h3>50K+</h3><p>Freelancers</p></div>
+        <div className="stat-card"><h3>20K+</h3><p>Projects Completed</p></div>
+        <div className="stat-card"><h3>98%</h3><p>Client Satisfaction</p></div>
+        <div className="stat-card"><h3>100+</h3><p>Countries</p></div>
       </section>
 
       {/* ================= FEATURES ================= */}
@@ -132,17 +133,17 @@ function HomePage() {
         <h2>How Skillora Works</h2>
         <div className="steps">
           <div className="step">
-            <span>1</span><br></br>
+            <span>1</span><br />
             <h3>Post Your Job</h3>
             <p>Describe your project and budget.</p>
           </div>
           <div className="step">
-            <span>2</span><br></br>
+            <span>2</span><br />
             <h3>Hire the Best</h3>
             <p>Compare freelancers and chat securely.</p>
           </div>
           <div className="step">
-            <span>3</span><br></br>
+            <span>3</span><br />
             <h3>Pay Safely</h3>
             <p>Release payment only after approval.</p>
           </div>

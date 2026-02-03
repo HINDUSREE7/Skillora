@@ -18,20 +18,75 @@ body {
 }
 
 /* ================= LAYOUT ================= */
+/* ================= UPDATED HOME BACKGROUND ================= */
 .homepage {
   width: 100%;
   min-height: 100vh;
+  /* Applying the space background from the Pay page */
+  background-color: #0a1929;
+  background-image: linear-gradient(rgba(10, 25, 41, 0.9), rgba(10, 25, 41, 0.9)), 
+                    url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
+  background-size: cover;
+  background-attachment: fixed;
+  color: #ffffff;
 }
 
-/* ================= NAVBAR ================= */
+/* ================= NAVBAR (Glass Effect) ================= */
 .navbar {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 60px;
-  background: #ffffff;
-  box-shadow: 0 20px 10px rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.03) !important; /* Transparent glass */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+}
+
+.logo-text {
+  color: #ffffff !important; /* Changed from dark to white */
+}
+
+.nav-links a {
+  color: #e5e7eb !important; /* Soft white links */
+}
+
+/* ================= STATS & FEATURES (Glass Cards) ================= */
+.stats {
+  background: transparent !important; /* Let background show through */
+}
+
+.stat-card, .feature-card {
+  background: rgba(255, 255, 255, 0.05) !important; /* Glass card */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff !important;
+}
+
+.stat-card h3, .features h2, .how-it-works h2 {
+  color: #1dbf73 !important; /* Emerald green accent from Pay page */
+}
+
+.stat-card p, .feature-card p, .step span {
+  color: #94a3b8 !important; /* Slate gray text */
+}
+
+/* ================= CATEGORIES (emerald accent) ================= */
+.category-card {
+  background: rgba(29, 191, 115, 0.1) !important;
+  border: 1px solid #1dbf73;
+  color: #ffffff;
+}
+
+/* ================= BUTTONS (consistent with pay page) ================= */
+.btn-primary {
+  background: #1dbf73 !important;
+  color: #0a1929 !important;
+  font-weight: 800;
+}
+
+.btn-outline {
+  border-color: #1dbf73 !important;
+  color: #1dbf73 !important;
 }
 
 /* ================= BRAND LOGO ================= */
@@ -46,7 +101,7 @@ body {
 .logo-icon {
   width: 38px;
   height: 38px;
-  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  background: linear-gradient(135deg, #1dbf73,#1dbf73);
   color: white;
   display: flex;
   align-items: center;
@@ -59,7 +114,7 @@ body {
 }
 
 .logo-accent {
-  color: #4f46e5;
+  color: #1dbf73;
 }
 
 .homepage.dark .logo-text {
@@ -81,7 +136,7 @@ body {
 
 /* ================= BUTTONS ================= */
 .btn-primary {
-  background: #292753;
+  background:#1dbf73;
   color: white;
   padding: 10px 22px;
   border-radius: 8px;
@@ -99,36 +154,76 @@ body {
 }
 
 /* ================= HERO ================= */
-.hero {
-  width: 100vw;
+/* ================= HERO VIDEO FIX ================= */
+
+.video-hero {
+  position: relative;
+  width: 100%;
   min-height: 80vh;
-  background: linear-gradient(135deg, #2d2c38, #9d92afad);
-  color: white;
+  overflow: hidden;
+}
+
+/* Video full background */
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Dark overlay for readability */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 2;
+}
+
+/* Center text ON video */
+/* Ensure the parent container takes up the full screen and centers content */
+.hero {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  justify-content: center; /* Horizontal center */
+  align-items: center;     /* Vertical center */
+  min-height: 100vh;       /* Full screen height */
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #0a1929; /* Matching your theme */
 }
 
 .hero-content {
+  position: relative;
+  z-index: 3;
   max-width: 900px;
-  padding: 0 20px;
+  /* Removed max-height to allow natural centering */
+  text-align: center;
+  color: white;
+  padding: 20px;
+  /* Ensure it sits in the middle of its parent */
+  margin: auto; 
 }
 
-.hero h1 {
-  font-size: 52px;
+/* Text sizes */
+.hero-content h1 {
+  font-size: 56px;
   margin-bottom: 20px;
+  line-height: 1.2;
 }
 
-.hero p {
+.hero-content p {
   font-size: 18px;
   margin-bottom: 30px;
+  color: #94a3b8; /* Matching your admin text color */
 }
 
+/* Center buttons */
 .hero-actions {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 16px;
 }
 
 /* ================= STATS ================= */
@@ -152,7 +247,7 @@ body {
 
 .stat-card h3 {
   font-size: 36px;
-  color: #4f46e5;
+  color: #1dbf73;
 }
 
 .stat-card p {
@@ -163,7 +258,7 @@ body {
   padding: 80px 60px;
   text-align: center;
   background: #f5f7fb;
-  color: #4f46e5;
+  color: #1dbf73;
 }
 .feature-grid {
   display: grid;
@@ -184,7 +279,7 @@ body {
   text-align: center;
 }
 .categories h2 {
-  color: #160fe9;
+  color: #1dbf73;
 }
 .category-grid {
   display: grid;
@@ -202,7 +297,7 @@ body {
 .how-it-works {
     padding: 60px;
     text-align: center;
-    color: #4f46e5;
+    color:#1dbf73;
 }
 .steps {
     display: flex;
@@ -212,13 +307,11 @@ body {
 .step span {
     font-size: 20px;
     color: #09090a;
-    border-radius: 50%;
-    padding: 5px;
-    background: #747475;
+    font-weight: 700;
 }
 /* ================= CTA ================= */
 .cta {
-  background: #4f46e5;
+  background: #1dbf73;
   color: white;
   text-align: center;
   padding: 70px 20px;
@@ -231,133 +324,19 @@ body {
   text-align: center;
   padding: 20px;
 }
-/* ================= LOGIN PAGE ================= */
 
-.login-page {
-  min-height: 100vh;
-  background: #f5f7fb;
+.hero {
+  background-color: transparent !important; /* Inherit the main page background */
 }
 
-.login-container {
-  max-width: 420px;
-  margin: 70px auto;
-  background: white;
-  padding: 30px;
-  border-radius: 50px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-  text-align: center;
-}
-.login-container h2 {
-  margin-bottom: 10px;
-  color: #292753;
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.2) !important; /* Lighter overlay */
 }
 
-.login-container p {
-  color: #6b7280;
-  margin-bottom: 30px;
+.hero-content h1 {
+  color: #ffffff;
 }
 
-.login-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+.hero-content p {
+  color: #f7f8f8;
 }
-
-.login-form input {
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #d1d5db;
-  font-size: 14px;
-}
-
-.login-footer {
-  margin-top: 20px;
-  font-size: 14px;
-}
-
-.login-footer span {
-  color: #4f46e5;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-/* ================= LOGIN PAGE LINKS ================= */
-.login-footer {
-  margin-top: 20px;
-  font-size: 14px;
-  color: #374151;
-}
-
-.register-link {
-  color: #4f46e5;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.register-link:hover {
-  text-decoration: underline;
-}
-
-.no-link-style {
-  text-decoration: none;
-  color: inherit;
-}
-/* ================= ABOUT PAGE ================= */
-
-/* About Hero overrides (reuse hero but adjust spacing) */
-.hero.about-hero {
-  min-height: 60vh;
-}
-
-.hero.about-hero h1 {
-  font-size: 48px;
-}
-
-/* About text section */
-.about-text {
-  max-width: 900px;
-  margin: 0 auto;
-  font-size: 18px;
-  line-height: 1.8;
-  color: #374151;
-}
-
-/* Mission / Vision / Values cards */
-.about-cards {
-  width: 100%;
-  padding: 80px 60px;
-  background-color: #ffffff;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-  text-align: center;
-}
-
-.about-card {
-  background: #f9fafb;
-  padding: 35px 25px;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-}
-
-.about-card h3 {
-  color: #4f46e5;
-  margin-bottom: 12px;
-}
-
-/* Why Skillora cards spacing */
-.features.about-features {
-  background: #f5f7fb;
-}
-
-/* CTA tweak for About */
-.cta.about-cta {
-  background: linear-gradient(135deg, #4f46e5, #7c3aed);
-}
-
-.no-link-style {
-  text-decoration: none;
-  color: inherit;
-}
-
-

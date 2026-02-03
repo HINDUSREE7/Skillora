@@ -9,7 +9,7 @@
 /* SIDEBAR */
 .admin-sidebar {
   width: 240px;
-  background: #020617;
+  background: #1c1d1d;
   color: white;
   padding: 30px 20px;
 }
@@ -109,4 +109,32 @@
 .status.pending {
   color: orange;
   font-weight: bold;
+}
+.admin-nav button {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  text-align: left;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-left: 4px solid transparent;
+}
+
+.admin-nav button:hover, 
+.admin-nav button.active {
+  background: rgba(29, 191, 115, 0.1);
+  color: #1dbf73;
+  border-left: 4px solid #1dbf73;
+}
+
+.logout-link {
+  margin-top: 20px;
+  display: block;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: #ff4d4d;
 }
