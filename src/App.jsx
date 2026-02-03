@@ -12,6 +12,11 @@ import "./App.css";
 import ScrollToTop from './components/ScrollToTop';
 import Provider from './pages/Provider';
 
+import HomePage from "./Pages/HomePage";
+import AboutPage from "./Pages/AboutPage";
+import LoginPage from "./Pages/loginPage";
+import AdminDashboard from "./Pages/AdminDashboard";
+import Pay from "./Pay";
 
 function App() {
   return (
