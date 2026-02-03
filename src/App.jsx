@@ -1,40 +1,23 @@
-import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
-import UserRegistrationPage from './pages/UserRegistrationPage';
-import Services from './pages/Services';
-import ServiceDetails from './pages/ServiceDetails';
-import Booking from './pages/Booking';
-import Payment from './pages/Payment';
-import Review from './pages/Review';
-import UserDashboard from './pages/UserDashboard';
-import ProviderDashboard from './pages/ProviderDashboard';
-import "./App.css";
-import ScrollToTop from './components/ScrollToTop';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import UserDashboard from "./pages/UserDashboard";
 
+// Dummy placeholder components (you can replace later)
+const Services = () => <h2 style={{ padding: "40px" }}>Services Page</h2>;
+const Profile = () => <h2 style={{ padding: "40px" }}>Expert Profile Page</h2>;
+const Reviews = () => <h2 style={{ padding: "40px" }}>Reviews Page</h2>;
 
-function App() {
+const App = () => {
   return (
-    <div className="app-container">
-      
-      <main className="content-area">
-        <ScrollToTop/>
-        <Routes>
-          <Route path="/register" element={<UserRegistrationPage />} />
-          <Route path="/dashboard" element={<UserDashboard />} />
-          <Route path="/provider"  element={<ProviderDashboard />} />
-
-          <Route path="/services" element={<Services />} />
-          <Route path="/profile/:id" element={<ServiceDetails />} />
-          <Route path="/book/:id" element={<Booking />} />
-          <Route path="/reviews/:id" element={<Review />} />
-          <Route path="/payment-success" element={<Payment />} />
-          <Route path="/" element={<Navigate to="/services" replace />} />
-          <Route path="*" element={<div style={{padding: '20px'}}><h2>Page Not Found</h2></div>} />
-        </Routes>
-        
-      </main>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<UserDashboard />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/profile/:id" element={<Profile />} />
+        <Route path="/reviews/:id" element={<Reviews />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
